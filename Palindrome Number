@@ -1,0 +1,33 @@
+using System;
+
+public class Solution
+{
+    public bool IsPalindrome(int x)
+    {
+
+        int x2 = x;
+        int res = 0;
+
+        while (x != 0)
+        {
+            if (x < 0)
+            {
+                return false;
+            }
+
+            int tem = x % 10;
+            res = res * 10 + tem;
+            x /= 10;
+
+        }
+
+        if (x2 == res)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
