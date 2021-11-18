@@ -1,0 +1,61 @@
+using System;
+using System.Collections;
+public class Solution
+{
+    public bool IsValid(string s)
+    {
+        Stack stack = new Stack();
+
+        foreach (char bracket in s)
+        {
+            if (bracket == '(')
+            {
+               stack.Push(bracket);
+            }
+
+            if (bracket == '[')
+            {
+                stack.Push(bracket);
+            }
+
+            if (bracket == '{')
+            {
+                stack.Push(bracket);
+            }
+
+            if (stack.Count== 0)
+            {
+                return false;
+            }
+            else if (bracket == ')')
+            {
+                if (stack.Peek().ToString() == "(")
+                {
+                    stack.Pop();
+                }
+                else return false;
+            }
+            else if (bracket == ']')
+            {
+                if (stack.Peek().ToString() == "[")
+                {
+                    stack.Pop();
+                }
+                else return false;
+            }
+            else if (bracket == '}')
+            {
+                if (stack.Peek().ToString() == "{")
+                {
+                    stack.Pop();
+                }
+                else return false;
+            }
+        }
+        if (stack.Count != 0)
+        {
+            return false;
+        }
+        return true;
+    }
+}
