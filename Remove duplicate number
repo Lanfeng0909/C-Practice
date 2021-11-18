@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+
+public class Solution
+{
+    public int RemoveDuplicates(int[] nums)
+    {
+        int p = 1, q = 1;
+        int j = nums.Length;
+        if (j == 0) {
+            return 0;
+        }
+        while (p < j)
+        {
+            if (nums[p] != nums[p - 1])
+            {
+                nums[q] = nums[p];
+                 ++q;
+            }
+            ++p;
+
+        }
+        return q;
+    }
+}
