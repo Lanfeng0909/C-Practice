@@ -1,0 +1,22 @@
+using System;
+
+public class Solution
+{
+    public string LongestCommonPrefix(string[] strs)
+    {
+        if (strs.Length == 0) return "";
+        var var = strs[0];
+        int j = var.Length;
+        foreach (string word in strs)
+        {
+            int i = 0;
+            while (i < j && i < word.Length && var[i] == word[i])
+            {
+                i++;
+            }
+            j = Math.Min(i, j);
+        }
+
+        return var.Substring(0, j);
+    }
+}
