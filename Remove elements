@@ -1,0 +1,29 @@
+using System;
+
+
+public class Solution
+{
+    public int RemoveElement(int[] nums, int val)
+    {
+        if (nums == null)
+        {
+            return 0;
+        }
+
+        int p = 0;
+        int j = nums.Length;
+
+        for (int q = 0; q < j; q++)
+        {
+            if (nums[q] != val)
+            {
+                nums[p] = nums[q];
+                p++;
+
+            }
+        }
+        return p;
+
+
+    }
+}
