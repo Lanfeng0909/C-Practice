@@ -1,0 +1,15 @@
+using System;
+
+public class Solution {
+    public int ClimbStairs(int n) {
+        int left = 0, middle = 0, result = 1;
+        for (int i = 1; i <= n; ++i) {
+            left = middle; 
+            middle = result; 
+            result = left + middle;
+        }
+        return result;
+
+
+    }
+}
