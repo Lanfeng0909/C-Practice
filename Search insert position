@@ -1,0 +1,19 @@
+using System;
+public class Solution
+{
+    public int SearchInsert(int[] nums, int target)
+    {
+        int i;
+        int n = nums.Length;
+
+        for (i = 0; i < n; i++)
+        {
+            if (target <= nums[i])
+            {
+                return  i;
+
+            }
+        }
+        return i;
+    }
+}
