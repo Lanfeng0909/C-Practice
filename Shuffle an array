@@ -1,0 +1,38 @@
+using System;
+
+
+public class Solution
+{
+    int[] original;
+    int[] shuffle;
+
+    public Solution(int[] nums)
+    {
+        this.original = new int[nums.Length];
+        Array.Copy(nums, original, nums.Length);
+        this. shuffle = new int[nums.Length];
+        Array.Copy(nums, shuffle, nums.Length);
+
+    }
+
+    public int[] Reset()
+    {
+
+        return original;
+    }
+
+    public int[] Shuffle()
+    {
+
+        for (int i = shuffle.Length-1 ; i >=0; i--)
+        {
+            Random random = new Random();
+            int j = random.Next(i, shuffle.Length);
+
+            int tem = shuffle[i];
+            shuffle[i] = shuffle[j];
+            shuffle[j] = tem;
+        }
+        return shuffle;
+    }
+}
