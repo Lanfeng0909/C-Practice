@@ -1,0 +1,25 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+
+public class Solution
+    {
+        public IList<int> inorderTraversal(TreeNode root)
+        {
+            var res = new List<int>();
+            inorder(root, res);
+            return res;
+        }
+
+        public void inorder(TreeNode root, List<int> res)
+        {
+            if (root == null)
+            {
+                return;
+            }
+            inorder(root.left, res);
+            res.Add(root.val);
+            inorder(root.right, res);
+        }
+    }
